@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO 搜尋引擎優化 -->
+  <meta name="description" content="距離全國賽 2025 倒數計時，精緻 SVG 背景加上毛玻璃倒數卡片，讓你每天充滿幹勁！">
+  <meta name="keywords" content="全國賽, 倒數計時, 計時器, 桌布, SVG, HTML, 前端練習">
+  <meta name="author" content="Jason（或你的名字）">
+
+  <!-- 社群分享預覽（Open Graph）-->
+  <meta property="og:title" content="距離全國賽還有... 🔥">
+  <meta property="og:description" content="精美倒數計時器，幫你記得夢開始的日子。">
+  <meta property="og:image" content="./LOGO.png"> <!-- 可放背景或截圖 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jason111nn.github.io/"> <!-- 放正式網址 -->
+
+  <!-- Twitter 預覽（選擇性）-->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="距離全國賽還有... 🔥">
+  <meta name="twitter:description" content="精美倒數計時器，幫你記得夢開始的日子。">
+  <meta name="twitter:image" content="./LOGO.png">
+  <title>全國賽倒數計時</title>
+  <link rel="icon" href="./LOGO.png">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .background {
+      position: fixed;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('./background.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.9;
+      /* 稍微透明，讓字更清楚 */
+    }
+
+    .countdown {
+      text-align: center;
+      font-size: 3em;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      /* 半透明白底 */
+      backdrop-filter: blur(10px);
+      /* 毛玻璃效果 */
+      -webkit-backdrop-filter: blur(10px);
+      /* Safari 支援 */
+      border-radius: 1rem;
+      box-shadow: 0 0 8px #ffffff55;
+      color: white;
+      text-shadow: 2px 2px 10px #000000cc;
+      max-width: 90%;
+      line-height: 1.5;
+    }
+
+
+    @media (max-width: 600px) {
+      .countdown {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .countdown {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 背景圖 -->
+  <div class="background"></div>
+
+  <!-- 倒數計時區塊 -->
+  <div class="countdown" id="countdown">
+    計算中...
+  </div>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("2025-07-18T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "全國賽開始啦！";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.innerHTML = `距離全國賽還有<br>${days} 天 ${hours} 小時 ${minutes} 分 ${seconds} 秒`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+
+</html>
