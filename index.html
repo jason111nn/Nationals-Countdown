@@ -40,7 +40,6 @@
       background-repeat: no-repeat;
       background-position: center;
       opacity: 0.9;
-      /* 稍微透明，讓字更清楚 */
     }
 
     .countdown {
@@ -48,11 +47,8 @@
       font-size: 3em;
       padding: 1rem 2rem;
       background-color: rgba(255, 255, 255, 0.2);
-      /* 半透明白底 */
       backdrop-filter: blur(10px);
-      /* 毛玻璃效果 */
       -webkit-backdrop-filter: blur(10px);
-      /* Safari 支援 */
       border-radius: 1rem;
       box-shadow: 0 0 8px #ffffff55;
       color: white;
@@ -60,17 +56,28 @@
       max-width: 90%;
       line-height: 1.5;
     }
+    .ms {
+      font-size: 0.6em;
+      vertical-align: baseline;
+      bottom: 0;
+    }
 
 
-    @media (max-width: 600px) {
+    @media (max-width: 630px) {
       .countdown {
         font-size: 2rem;
       }
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 440px) {
       .countdown {
         font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .countdown {
+        font-size: 1rem;
       }
     }
   </style>
@@ -78,10 +85,8 @@
 
 <body>
 
-  <!-- 背景圖 -->
   <div class="background"></div>
 
-  <!-- 倒數計時區塊 -->
   <div class="countdown" id="countdown">
     計算中...
   </div>
@@ -103,13 +108,18 @@
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
+      const ms = Math.floor(diff % 1000);
+      const formattedMs = ms.toString().padStart(3, "0");
 
-      countdownEl.innerHTML = `距離全國賽還有<br>${days} 天 ${hours} 小時 ${minutes} 分 ${seconds} 秒`;
+      countdownEl.innerHTML =
+        `距離全國賽還有<br>${days} 天 ${hours} 小時 ${minutes} 分 ` +
+        `${seconds}<span class="ms">.${formattedMs}</span> 秒`;
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    setInterval(updateCountdown, 33);
   </script>
+
 </body>
 
 </html>
