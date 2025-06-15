@@ -44,7 +44,8 @@
 
     .countdown {
       text-align: center;
-      font-size: 3em;
+      width: 70vw;
+      font-size: 4.8vw;
       padding: 1rem 2rem;
       background-color: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
@@ -63,7 +64,7 @@
     }
 
 
-    @media (max-width: 630px) {
+    /* @media (max-width: 630px) {
       .countdown {
         font-size: 2rem;
       }
@@ -79,7 +80,7 @@
       .countdown {
         font-size: 1rem;
       }
-    }
+    } */
   </style>
 </head>
 
@@ -93,7 +94,7 @@
 
   <script>
     const countdownEl = document.getElementById("countdown");
-    const targetDate = new Date("2025-07-18T00:00:00");
+    const targetDate = new Date("2025-07-16T00:00:00");
 
     function updateCountdown() {
       const now = new Date();
