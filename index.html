@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="距離全國賽 2025 倒數計時，精緻 SVG 背景加上毛玻璃倒數卡片!">
+  <title>全國賽倒數計時器 | Nationals Countdown</title>
+  <meta name="description" content="這是為全國賽設計的倒數計時網頁，幫助選手掌握比賽剩餘時間。">
+
   <meta name="keywords" content="全國賽, 倒數計時, 計時器, 桌布, SVG, HTML, 前端練習">
   <meta name="author" content="Jason111nn">
 
@@ -14,7 +16,7 @@
   <meta property="image" content="./LOGO.png">
   <meta property="type" content="website">
   <meta property="url" content="https://jason111nn.github.io/">
-  <title>全國賽倒數計時</title>
+  <meta property="site_name" content="jason111nn-2025全國賽倒數計時">
   <link rel="icon" href="./LOGO.png">
   <style>
     html,
@@ -62,7 +64,22 @@
       vertical-align: baseline;
       bottom: 0;
     }
-
+    .test-text {
+      font-size: 1vw;
+      color: #ffffff;
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+    }
+    .home-back-button {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .home-back-button:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
 
     /* @media (max-width: 630px) {
       .countdown {
@@ -121,6 +138,11 @@
     setInterval(updateCountdown, 33);
   </script>
 
+    <span class="test-text">
+      短期用途，歡迎推廣<br>
+      這是一個專為全國競賽設計的倒數計時器，讓參賽學生能隨時掌握距離比賽開始的時間。-前往首頁: 
+      <a href="https://jason111nn.github.io" class="home-back-button">https://jason111nn.github.io</a>
+    </span>
 </body>
 
 </html>
