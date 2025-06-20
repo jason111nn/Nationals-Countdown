@@ -59,11 +59,13 @@
       max-width: 90%;
       line-height: 1.5;
     }
+
     .ms {
       font-size: 0.6em;
       vertical-align: baseline;
       bottom: 0;
     }
+
     .test-text {
       font-size: 1vw;
       color: #ffffff;
@@ -71,22 +73,25 @@
       bottom: 10px;
       left: 10px;
     }
+
     .home-back-button {
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
     }
+
     .home-back-button:hover {
       color: #ffd700;
       text-decoration: underline;
     }
 
-    /* @media (max-width: 630px) {
-      .countdown {
-        font-size: 2rem;
+    @media (max-width: 1000px) {
+      .test-text {
+        display: none;
       }
     }
 
+    /*
     @media (max-width: 440px) {
       .countdown {
         font-size: 1.5rem;
@@ -118,7 +123,7 @@
       const diff = targetDate - now;
 
       if (diff <= 0) {
-        countdownEl.textContent = "全國賽開始啦！";
+
         return;
       }
 
@@ -138,11 +143,12 @@
     setInterval(updateCountdown, 33);
   </script>
 
-    <span class="test-text">
-      短期用途，歡迎推廣<br>
-      這是一個專為全國競賽設計的倒數計時器，讓參賽學生能隨時掌握距離比賽開始的時間。-前往首頁: 
-      <a href="https://jason111nn.github.io" class="home-back-button">https://jason111nn.github.io</a>
-    </span>
+  <span class="test-text">
+    短期用途，歡迎推廣
+    <br>
+    這是一個專為全國競賽設計的倒數計時器，讓參賽學生能隨時掌握距離比賽開始的時間。-前往首頁:
+    <a href="https://jason111nn.github.io" class="home-back-button">https://jason111nn.github.io</a>
+  </span>
 </body>
 
 </html>
